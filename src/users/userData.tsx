@@ -14,6 +14,7 @@ type User = {
     html_url: string | undefined;
     twitter_username: string | null;
     blog: string;
+    public_repos: number;
 }
 
 type UserData = {
