@@ -21,8 +21,9 @@ const Profile = () => {
     const { dataProfile, addUser } = useUserData()
     const [loading, setLoading] = useState<boolean>(false)
     const [repoView, setRepoView] = useState<string>('repositories')
-    const { data } = useQuery([],
-        () => handleGetTotalFavoritesService(dataProfile!.login)
+    const { data } = useQuery(['data', dataProfile],
+        () => handleGetTotalFavoritesService(dataProfile!.login),
+        { refetchOnWindowFocus: false }
     )
 
 
@@ -42,10 +43,6 @@ const Profile = () => {
     }, [dataProfile])
 
 
-
-
-
-    console.log('dataProfile ', dataProfile)
     return (
         loading ? <p>Loading...</p> :
             <div className="w-screen overflow-x-hidden h-screen bg-white pb-5">
@@ -59,7 +56,7 @@ const Profile = () => {
 
                     </div>
                 </div>
-                <div className="grid grid-cols-10 gap-4 w-full max-w-5xl mx-auto mt-10" >
+                <div className="grid grid-cols-10 gap-6 w-full max-w-5xl mx-auto mt-10" >
                     {
                         dataProfile &&
                         <>
