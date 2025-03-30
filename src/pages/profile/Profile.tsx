@@ -14,6 +14,7 @@ import { FaRegStar } from "react-icons/fa";
 import StarredRepositories from '../../components/StarredRepositories';
 import { useQuery } from 'react-query';
 import AccordionProfile from '../../components/AccordionProfile';
+import LoadingCard from '../../components/LoadingCard';
 
 
 const Profile = () => {
@@ -58,6 +59,8 @@ const Profile = () => {
             </div>
             <div className="grid grid-cols-10 gap-6 w-full max-w-5xl mx-auto mt-20 px-2 h-full pb-5" >
                 {
+                    loading ?
+                    <LoadingCard/> :
                     dataProfile &&
                     <>
                         <div className="col-span-10 md:col-span-3 flex-col flex relative">
