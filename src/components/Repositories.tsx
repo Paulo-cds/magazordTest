@@ -7,6 +7,7 @@ import { Repo } from "./typesUse"
 import ButtonDefault from "./ButtonDefault"
 import { IoIosSearch } from "react-icons/io";
 import SelectDefault from "./SelectDefault"
+import LoadingCard from "./LoadingCard"
 
 const languagesSelect = [
     { value: '', text: 'All' },
@@ -35,9 +36,9 @@ const Repositories = () => {
     )
 
     return (
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 pb-5">
             <div className="grid grid-cols-10 gap-4 mt-3 mb-3"  >
-                <div className="col-span-5 flex-col flex ">
+                <div className="col-span-10 lg:col-span-5 flex-col flex ">
                     <div className="relative flex items-center">
                         <IoIosSearch className="absolute left-2 w-5 h-5 text-gray-400" />
                         <input
@@ -49,12 +50,12 @@ const Repositories = () => {
                         />
                     </div>
                 </div>
-                <div className="col-span-5 flex gap-2">
+                <div className="col-span-10 lg:col-span-5 order-first lg:order-last flex gap-2">
                     <SelectDefault setItem={setLanguage} optionsSelect={languagesSelect} setPage={setPage} />
                 </div>
             </div>
             {isLoading ?
-                <p className="text-primary text-[40px] sm:text-[60px] lg:text-[100px] mx-auto" >Loading...</p>
+                <LoadingCard/>
                 :
                 data &&
                 <>

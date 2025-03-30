@@ -31,25 +31,25 @@ const Home = () => {
         <div className="w-screen h-screen bg-white flex justify-center items-center">
             <div className="flex-column max-w-[90%] justify-center items-center" >
                 <div className="flex justify-center items-center gap-2 w-full" >
-                    <p className="text-primary text-[40px] sm:text-[60px] lg:text-[100px] " >
+                    <p className="text-primary text-[50px] sm:text-[80px] lg:text-[100px] " >
                         Search
                     </p>
-                    <p className="text-headBlack text-[30px] sm:text-[40px] lg:text-[70px] " >
+                    <p className="text-headBlack text-[30px] sm:text-[60px] lg:text-[70px] " >
                         -
                     </p>
-                    <p className="text-primary text-[40px] sm:text-[60px] lg:text-[100px] " >
+                    <p className="text-primary text-[50px] sm:text-[80px] lg:text-[100px] " >
                         Dev
                     </p>
 
                 </div>
                 <form onSubmit={handleLookForUser} className="flex justify-center items-center" >
-                    <div className="w-full max-w-[350px]  mt-2">
+                    <div className="w-full max-w-[450px]  mt-2">
                         <input
                             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-primary rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                             value={nameFinder}
                             onChange={e => setNameFinder(e.target.value)}
                             disabled={loading}
-                            type="text" placeholder="Name" />
+                            type="text" placeholder="Nome" />
                         {
                             notFound &&
                             <p className="text-red-500 text-xs italic">
