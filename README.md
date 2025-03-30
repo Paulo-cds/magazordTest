@@ -1,54 +1,42 @@
-# React + TypeScript + Vite
+# Teste Magazord
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esse projeto foi desenvolvido de acordo com o teste proposto para vaga front-end na empresa Magazord.
 
-Currently, two official plugins are available:
+## Estrutura
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Desenvolvido com Vite, Reactjs, Typescript, utilizando Tailwindcss para estilização e React-query para requisições e cache
 
-## Expanding the ESLint configuration
+## Proposta
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+O projeto realiza uma pesquisa de repositórios do GitHub, onde o usuário digita o login que deseja pesquisar e é retornado os repositórios públicos em uma aba e os repositórios marcados como "Starred" em outra aba.
+É possível filtrar os repositórios pelo nome, onde é buscado a partir do momento em que o usuário começa a digitar o nome, assim mesmo que tenha apenas uma letra ele vai buscar os repositórios que tenham aquela letra no nome, também é possível filtrar pela linguagem utilizada no repositório. Para os repositírios públicos é possível realizar esses filtros diretamente na rota do Github API, já para os repositórios Starred não existe essa opção, então realizei esse filtro na mesma função que busca todos esses repositórios sendo possível filtrar como acontece com os demais.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Observações
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+No Figma proposto tembém tem um filtro para os tipos de repositórios, mas esse filtro não foi possível encontrar no Github API e também não foi possível realizar no front porque essa informação não vem nos demais endpoints.
+Para não atingir o limite de requisições do Github API foi necessário gerar um token de desenvolvedor no pŕoprio github, assim é possível realizar mais requisições.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Como executar
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+# clonar repositório
+
+git clone git@github.com:Paulo-cds/magazordTest.git
+
+# entrar na pasta do projeto
+
+cd magazordTest
+
+# instalar dependencias
+
+npm i ou yarn
+
+# executar o projeto
+
+npm run dev ou yarn dev
+
+o projeto será executado no http://localhost:5173/
+
+## Deploy
+
+O projeto está rodando no vercel nesse link [magazord-test](https://magazord-test-six.vercel.app/)
+
