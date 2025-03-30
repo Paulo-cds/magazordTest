@@ -18,19 +18,19 @@ Para não atingir o limite de requisições do Github API foi necessário gerar 
 
 ## Como executar
 
-# clonar repositório
+### clonar repositório
 
 git clone git@github.com:Paulo-cds/magazordTest.git
 
-# entrar na pasta do projeto
+### entrar na pasta do projeto
 
 cd magazordTest
 
-# instalar dependencias
+### instalar dependencias
 
 npm i ou yarn
 
-# executar o projeto
+### executar o projeto
 
 npm run dev ou yarn dev
 
